@@ -1,11 +1,11 @@
+import os
 import requests
 
 
 ## Very simple script that transfer's all contacts to the correct account owner
   # TODO: once Jamie reaches out, will abstract to entire LTC sales team
 
-# Note: access token placed here since this was a 'quick throwaway script' in private repo
-sf_access_token = '00D5w000002CFgX!AQ0AQLv4YtFZQJiPmQQjdWfT5wXIparCOSm7WrSGyAxIaBuko7QyU8NjNm.AIfwzzW1R7Cfv8TXSQzFyNard7ef.z8.ekNgd'
+sf_access_token = os.environ.get('SF_TOKEN')
 sf_headers = {"Authorization": "Bearer %s" % sf_access_token}   
 sf_query_url = 'https://clipboardhealth.my.salesforce.com/services/data/v53.0/query/'
 
